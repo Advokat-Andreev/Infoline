@@ -3,17 +3,18 @@
     padding-top: 150px;
     min-height: 750px;
     border-bottom: 50px solid #1e92e7;
+    display: flex;
 }
 
 .hero__container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
 }
 
 .hero__content {
     padding-top: 75px;
+    flex: 1;
 }
 
 .adress {
@@ -56,10 +57,40 @@
 
 .hero__btn {}
 
-.hero__image {}
+.hero__image {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
 
 .hero__pic {
     height: 100%;
     object-fit: contain;
     object-position: bottom center;
+    z-index: 20;
+    position: relative;
+}
+
+.hero__image::before,
+.hero__image::after {
+    display: block;
+    height: 100%;
+    width: 50vw;
+    position: absolute;
+    border-radius: 5px 0 0 0;
+}
+
+.hero__image::before {
+    content: "";
+    background-image: url("../../images/bg/sky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 15;
+}
+
+.hero__image::after {
+    content: "";
+    top: -15px;
+    left: 30px;
+    z-index: 10;
 }
